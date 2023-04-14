@@ -8,7 +8,7 @@ body {
 	padding: 0;
 
 	color: var(--black);
-	background: #E5E5E5;
+	background: #F5F6F8;
 
 	font-family: 'Noto Sans', sans-serif;
 }
@@ -22,6 +22,7 @@ a {
 :root{
 	--black: #3B434E;
 	--gray-light: #EBEBEB;
+	--gray-dark: #787D85;
 	--white: white;
 	--primary: #7653FC;
 	--primary-hover: #6344DF;
