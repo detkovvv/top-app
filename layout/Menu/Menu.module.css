@@ -12,15 +12,15 @@
 	margin-top: 20px;
 }
 
-/*.firstLevelActive,*/
-/*.firstLevel:hover{*/
-/*	color: var(--primary)*/
-/*}*/
+.firstLevelActive,
+.firstLevel:hover{
+	color: var(--primary)
+}
 
-/*.firstLevelActive path,*/
-/*.firstLevel:hover path{*/
-/*	fill: var(--primary);*/
-/*}*/
+.firstLevelActive svg,
+.firstLevel:hover svg{
+	fill: var(--primary);
+}
 
 .secondLevel {
 	margin-bottom: 10px;
