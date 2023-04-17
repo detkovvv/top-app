@@ -4,7 +4,6 @@ import BooksIcon from './icons/books.svg'
 import ProductsIcon from './icons/products.svg'
 import { FirstLevelMenuItem } from '../interfaces/menu.interface';
 import { TopLevelCategory } from '../interfaces/page.interface';
-import React from 'react';
 
 export const firstLevelMenu: FirstLevelMenuItem[] = [
   { route: '[type]', name: 'Курсы', icon: <CoursesIcon />, id: TopLevelCategory.Courses },

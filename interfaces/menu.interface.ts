@@ -1,10 +1,10 @@
 import { TopLevelCategory } from './page.interface';
 
 export interface PageItem {
-  alias: string
-  title: string
-  _id: string
-  category: string
+  alias: string;
+  title: string;
+  _id: string;
+  category: string;
 }
 
 export interface MenuItem {
@@ -21,5 +21,4 @@ export interface FirstLevelMenuItem {
   icon: JSX.Element;
   id: TopLevelCategory;
 }
-
 
