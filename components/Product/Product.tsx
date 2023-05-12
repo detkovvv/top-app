@@ -44,17 +44,20 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
             </div>
             <div className={styles.title}>{product.title}</div>
             <div className={styles.price}>
-              {priceRu(product.price)}
+              <span><span className='visuallyHidden'>цена</span>{priceRu(product.price)}</span>
               {product.oldPrice && (
                 <Tag className={styles.oldPrice} color='green'>
+                  <span className='visuallyHidden'>скидка</span>
                   {priceRu(product.price - product.oldPrice)}
                 </Tag>
               )}
             </div>
             <div className={styles.credit}>
+              <span className='visuallyHidden'>кредит</span>
               {priceRu(product.credit)}/<span className={styles.month}>мес</span>
             </div>
             <div className={styles.rating}>
+              <span className='visuallyHidden'>{'рейтинг' + (product.reviewAvg ?? product.initialRating)}</span>
               <Rating rating={product.reviewAvg ?? product.initialRating} />
             </div>
             <div className={styles.tags}>
@@ -64,8 +67,8 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
                 </Tag>
               ))}
             </div>
-            <div className={styles.priceTitle}>Цена</div>
-            <div className={styles.creditTitle}>Кредит</div>
+            <div className={styles.priceTitle} aria-hidden={true}>Цена</div>
+            <div className={styles.creditTitle} aria-hidden={true}>Кредит</div>
             <div className={styles.rateTitle}>
               <a href='#ref' onClick={scrollToReview}>
                 {product.reviewCount}{' '}
@@ -105,6 +108,7 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
                 arrow={isReviewOpened ? 'down' : 'right'}
                 className={styles.reviewButton}
                 onClick={() => setIsReviewOpened(!isReviewOpened)}
+                aria-expanded={isReviewOpened}
               >
                 Читать отзывы
               </Button>

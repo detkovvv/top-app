@@ -27,7 +27,7 @@ if(e.key == 'Enter'){
   };
 
   return (
-    <div className={cn(className, styles.search)} {...props}>
+    <form className={cn(className, styles.search)} {...props} role="search">
       <Input
         className={styles.input}
         placeholder='Поиск...'
@@ -37,9 +37,11 @@ if(e.key == 'Enter'){
       <Button
         appearance='primary'
         className={styles.button}
-        onClick={goToSearch}>
+        onClick={goToSearch}
+        aria-label="Искать по сайту"
+      >
           <GlassIcon />
       </Button>
-    </div>
+    </form>
   );
 };

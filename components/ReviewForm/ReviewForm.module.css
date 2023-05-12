@@ -53,6 +53,9 @@
 	right: 20px;
 
 	cursor: pointer;
+
+	border: none;
+	background: none;
 }
 
 .error .close path{
@@ -72,6 +75,7 @@
 		justify-self: normal;
 	}
 }
+
 @media screen and (max-width: 640px) {
 	.reviewForm {
 		grid-template-columns: [start] 1fr [end];
