@@ -29,7 +29,6 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
     } catch (e) {
       setError(e.message);
     }
-
   };
 
   return (

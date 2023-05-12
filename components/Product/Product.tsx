@@ -24,7 +24,7 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
 
       const scrollToReview = () => {
         setIsReviewOpened(true);
-        reviewRef.current.scrollIntoView({
+        reviewRef.current?.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
         });

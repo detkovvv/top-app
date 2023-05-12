@@ -7,40 +7,36 @@
     "debug": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
-    "stylelint": "stylelint \"**/*.css\" --fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "stylelint": "stylelint \"**/*.css\" --fix"
   },
   "dependencies": {
-    "@svgr/webpack": "^7.0.0",
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.31",
-    "@types/react-dom": "18.0.11",
     "axios": "^1.3.5",
     "babel-plugin-inline-react-svg": "^2.0.2",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
-    "eslint": "^8.37.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.12.7",
+    "husky": "^8.0.3",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
+    "react-yandex-metrika": "^2.6.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^7.0.0",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.31",
+    "@types/react-dom": "18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.37.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "stylelint": "^15.3.0",
     "stylelint-config-standard": "^31.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-order-config-standard": "^0.1.3",
     "typescript": "5.0.3"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.8.7"
   }
 }
