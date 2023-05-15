@@ -7,27 +7,29 @@ import { Rating } from '../Raiting/Rating';
 import { Textarea } from '../Textarea/Textarea';
 import { Button } from '../Button/Button';
 import { useForm, Controller } from 'react-hook-form';
-import { IReviewForm, IReviewSendResponse } from './ReviewForm.interface';
+import { IReviewForm, IReviewSentResponse } from './ReviewForm.interface';
 import { API } from '../../helpers/api';
 import axios from 'axios';
 import { useState } from 'react';
 
 export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
-  const { register, control, handleSubmit, formState: { errors }, reset, clearErrors} = useForm<IReviewForm>();
+  const { register, control, handleSubmit, formState: { errors }, reset, clearErrors } = useForm<IReviewForm>();
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [error, setError] = useState<string>();
 
   const onSubmit = async (formData: IReviewForm) => {
     try {
-      const { data } = await axios.post<IReviewSendResponse>(API.review.createDemo, {...formData, productId })
-      if(data.message) {
+      const { data } = await axios.post<IReviewSentResponse>(API.review.createDemo, { ...formData, productId });
+      if (data.message) {
         setIsSuccess(true);
         reset();
       } else {
         setError('Что-то пошло не так');
       }
     } catch (e) {
-      setError(e.message);
+      if (e instanceof Error) {
+        setError(e.message);
+      }
     }
   };
 
@@ -83,7 +85,7 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
           </span>
         </div>
       </div>
-      {isSuccess && <div className={cn(styles.success, styles.panel)} role="alert">
+      {isSuccess && <div className={cn(styles.success, styles.panel)} role='alert'>
         <div className={styles.successTitle}>Ваш отзыв отправлен</div>
         <div>
           Спасибо, ваш отзыв будет опубликован после проверки.
@@ -91,9 +93,9 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
         <button
           className={styles.close}
           onClick={() => setIsSuccess(false)}
-          aria-label="Закрыть оповещение"
+          aria-label='Закрыть оповещение'
         >
-          <CloseIcon  />
+          <CloseIcon />
         </button>
       </div>}
       {error && <div className={cn(styles.error, styles.panel)}>
@@ -101,11 +103,11 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
         <button
           className={styles.close}
           onClick={() => setError(undefined)}
-          aria-label="Закрыть оповещение"
+          aria-label='Закрыть оповещение'
         >
-          <CloseIcon  />
+          <CloseIcon />
         </button>
-      </div> }
+      </div>}
     </form>
   );
 };
